@@ -11,4 +11,3 @@ def stot():
         except Exception as e:
             return "Voice not recognised Speak again"
             exit(0)
-

@@ -4,7 +4,7 @@ import mail
 import scrapper
 import text2voice
 import voice2text
-driver = webdriver.Firefox()
+driver = webdriver.Chrome()
 
 
 while True:
