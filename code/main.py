@@ -1,14 +1,21 @@
-import time
-from selenium import webdriver
+import requests as req
 import mail
 import scrapper
 import text2voice
 import voice2text
-driver = webdriver.Chrome()
+from bs4 import BeautifulSoup 
 
 
-while True:
-    topic = "pokemon"
-    driver.get("https://en.wikipedia.org/wiki/"+topic)
-    driver.maximize_window()
-    scrapper.scrapepara(driver)
+# while True:
+topic = voice2text.stot()
+print(topic)
+r=req.get("https://everything2.com/?node="+topic)
+soup = BeautifulSoup(r.content, 'html5lib')
+data = soup.find_all("div",attrs={"class":"content"})
+
+feed = ""
+
+for i in data:
+    feed=feed+i.text
+
+print(feed)
