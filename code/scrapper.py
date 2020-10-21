@@ -1,6 +1,12 @@
-from selenium import webdriver
-import time
+from bs4 import BeautifulSoup
+import requests as req
 
-def scrapepara(driver):
-    data =driver.find_element_by_tag_name("body")
-    print(data.text)
+def get(topic):
+    r=req.get("https://everything2.com/?node="+topic)
+    soup = BeautifulSoup(r.content, 'html5lib')
+    data = soup.find_all("div",attrs={"class":"content"})
+
+    feed = ""
+    for i in data:
+        feed=feed+i.text
+    return feed 

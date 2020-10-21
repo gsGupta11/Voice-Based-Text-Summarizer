@@ -1,6 +1,6 @@
 def CreateFile(data,title):
     try:
-        name ="../results/"+title+"_summary.txt"
+        name ="../results/"+title+".txt"
         f = open(name, "w")
         f.write(data)
         f.close()
