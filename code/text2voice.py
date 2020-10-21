@@ -7,6 +7,6 @@ def speechTrans(data):
     speech = gTTS(data)
     speech.save("speech.mp3")
     # For Windows -
-    os.system("speech.mp3")
+    # os.system("speech.mp3")
     # For Linux - 
-    # playsound('speech.mp3')
+    playsound('speech.mp3')

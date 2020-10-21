@@ -23,23 +23,26 @@ def stot():
 
 
 t2v.speechTrans("Tell the topic")
-#topic=stot()
-topic='kolkata'
+topic=stot()
+# topic='kolkata'
 print(topic)
 data=scrapper.get(topic)
 print(data)
 print("1. Speak 1 for storing it in text file")
 print("2. Speak 2 for getting it mailed to your mail id")
 print("3. Speak 3 for summarizing the text")
-
+print("4. Speak 4 for speech output of summarized text")
 option=int(input())
+t2v.speechTrans(str(option))
 
-print(option)
+s=x.summarize(data)
 
-if(option==1):
-    print(handleFile.CreateFile(data,topic))
-if(option==2):
+if(option=="1" or option=="one" or option==1):
+    print(handleFile.CreateFile(s,topic))
+if(option==2 or option=="two" or  option=="2"):
+    handleFile.CreateFile(s,topic)
     mail1.sendMail(topic)
-
-#data1=x.summarize(data)
-#print(data)
+if option==3:
+    print(s)
+if option==4:
+    t2v.speechTrans(s)

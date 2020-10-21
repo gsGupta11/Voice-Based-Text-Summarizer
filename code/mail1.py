@@ -37,3 +37,4 @@ def sendMail(topic):
     session.sendmail(sender_address, receiver_address, text)
     session.quit()
     print('Mail Sent')
+# sendMail("HELLO")
