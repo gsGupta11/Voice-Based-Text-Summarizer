@@ -22,12 +22,13 @@ def sendMail(topic):
     #The body and the attachments for the mail
     message.attach(MIMEText(mail_content, 'plain'))
     attach_file_name = '../results/'+topic+'.txt'
+    # print(attach_file_name)
     attach_file = open(attach_file_name, 'rb') # Open the file as binary mode
     payload = MIMEBase('application', 'octate-stream')
     payload.set_payload((attach_file).read())
     encoders.encode_base64(payload) #encode the attachment
     #add payload header with filename
-    payload.add_header('Content-Decomposition', 'attachment', filename=attach_file_name)
+    payload.add_header('Content-Disposition', 'attachment', filename=str(topic)+".txt")
     message.attach(payload)
     #Create SMTP session for sending the mail
     session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
