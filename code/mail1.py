@@ -12,7 +12,7 @@ def sendMail(topic):
     '''
     #The mail addresses and password
     sender_address = 'software.testing.voice@gmail.com'
-    sender_pass = 'Sweta@09'
+    sender_pass = 'Software@12'
     receiver_address = 'yashjhunjhunwala8@gmail.com'
     #Setup the MIME
     message = MIMEMultipart()
@@ -38,4 +38,4 @@ def sendMail(topic):
     text = message.as_string()
     session.sendmail(sender_address, receiver_address, text)
     session.quit()
-    print('Mail Sent')
+    return 'Mail Sent'
