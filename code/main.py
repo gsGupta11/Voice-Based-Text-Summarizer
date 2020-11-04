@@ -82,3 +82,5 @@ def final():
         print(s)
     if option==4:
         t2v.speechTrans(s)
+
+final()
