@@ -5,8 +5,8 @@ html5lib
 bs4
 sklearn
 nltk
-gtts
 playsound
-speech_recognition
-pyaudio
+SpeechRecognition
+PyAudio
 matplotlib
+pyttsx3
